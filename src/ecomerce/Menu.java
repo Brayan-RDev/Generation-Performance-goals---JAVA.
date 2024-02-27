@@ -3,12 +3,24 @@ package ecomerce;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import ecomerce.model.ProdutoCamiseta;
+
 public class Menu {
 
 	public static void main(String[] args) {		
 	Scanner scan = new Scanner(System.in);
 	int escolha;
-		
+	
+	ProdutoCamiseta c1 = new ProdutoCamiseta();
+	
+	c1.setId(1);
+	c1.setNome("Camiseta Branca Poliester");
+	c1.setTamanho("M");
+	c1.setPreco(20f);
+	c1.setTipoDeProduto("Camiseta");
+	c1.setQuantidade(30);
+	c1.visualizar();
+	
 		do {
 			System.out.println("-------- E-commerce-Roupas --------\n"
 							 + "1 - Cadastrar Produto\n" 
