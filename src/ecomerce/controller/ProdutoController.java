@@ -42,10 +42,10 @@ public class ProdutoController implements ProdutoRepository{
 		
 		if(buscarConta != null) {
 			listaProdutos.set(listaProdutos.indexOf(buscarConta), produto);
-			System.out.println("\nA conta número: " + produto.getId() + " Foi atualizada com sucesso!");
+			System.out.println("\nO produto número: " + produto.getId() + " Foi atualizado com sucesso!");
 		}
 		else {
-			System.out.println("\nA conta número: " + produto.getId() + " não foi encontrada!");
+			System.out.println("\nO produto número: " + produto.getId() + " não foi encontrado!");
 		}
 	}
 
@@ -55,11 +55,11 @@ public class ProdutoController implements ProdutoRepository{
 		
 		if(produto != null) {
 			if(listaProdutos.remove(produto) == true) {
-				System.out.println("\nA conta número: " + numero + " foi deletada com sucesso!");
+				System.out.println("\nO produto número: " + id + " Foi deletado com sucesso!");
 			}
 		}
 		else {
-			System.out.println("\nA conta número: " + produto.getId() + " não foi encontrada!");
+			System.out.println("\nO produto número: " + id + " não foi encontrado!");
 		}
 	}
 	

@@ -29,7 +29,7 @@ public class ProdutoCamiseta extends Produto {
 		System.out.println("Nome do Produto: " + getNome());
 		System.out.println("Preço Unitário(R$): " + getPreco() + "\n"
 						 + "Quantidade: " + getQuantidade()
-						+ "\n-------------------------------------");
+						+ "\n--------------------------------------");
 	}
 
 }

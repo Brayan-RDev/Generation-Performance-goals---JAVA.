@@ -115,10 +115,72 @@ public class Menu {
 				}
 				case 4:{
 					System.out.println("\nATUALIZAR DADOS DO PRODUTO");
+					System.out.println("\nDigite o ID do produto:");
+					id = scan.nextInt();
+					scan.nextLine();
+					
+					var buscaConta = produto.buscarNaCollection(id);
+					
+					if(buscaConta != null) {
+						do{
+							try {
+								System.out.println("\nEscolha o tamanho da Camiseta\n"
+												 + "1 - P\n" 
+												 + "2 - M\n" 
+												 + "3 - G\n");
+								escolha = scan.nextInt();
+								scan.nextLine();
+							}catch(InputMismatchException e){
+								System.out.println("\nDigite valores inteiros!");
+								scan.nextLine();
+								escolha = 0;
+							}
+							
+							switch(escolha) {
+								case 1: {
+									tamanho = "P";
+									break;
+								}
+								case 2: {
+									tamanho = "M";
+									break;
+								}
+								case 3: {
+									tamanho = "G";
+									break;
+								}
+								default:{
+									System.out.println("\nOpção Invalida!");
+									break;
+								}
+							}
+						}while(escolha != 1 && escolha != 2 && escolha != 3);
+						
+						System.out.println("\nDigite o tipo de produto");
+						tipoDeProduto = scan.nextLine();
+						
+						System.out.println("\nDigite o Nome do produto");
+						nome = scan.nextLine();
+						
+						System.out.println("\nDigite o Preço do produto");
+						preco = scan.nextFloat();
+						
+						System.out.println("\nDigite a Quantidade de produtos dispiniveis");
+						quantidade = scan.nextInt();
+						scan.nextLine();
+						
+						produto.atualizar(new ProdutoCamiseta(id, tamanho, tipoDeProduto, nome, preco, quantidade));
+					}
 					break;
 				}
 				case 5:{
 					System.out.println("\nDELETAR PRODUTO");
+					System.out.println("\nDigite o ID do Produto: ");
+					id = scan.nextInt();
+					scan.nextLine();
+					
+					produto.deletar(id);
+						
 					break;
 				}
 				case 6:{
